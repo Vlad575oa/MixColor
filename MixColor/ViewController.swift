@@ -23,36 +23,36 @@ class ViewController: UIViewController {
         redSliderLabel.thumbTintColor = .white
         redSliderLabel.value = 0.5
         redSliderLabel.tintColor = UIColor.red
-        redValue.text = ""
+        redValue.text = "\(redSliderLabel.value)"
     
         greenSliderLabel.minimumValue = 0
         greenSliderLabel.maximumValue = 1
         greenSliderLabel.thumbTintColor = .white
         greenSliderLabel.value = 0.5
         greenSliderLabel.tintColor = UIColor.green
-        greenValue.text = ""
+        greenValue.text = "\(greenSliderLabel.value)"
         
         blueSliderLabel.minimumValue = 0
         blueSliderLabel.maximumValue = 1
         blueSliderLabel.thumbTintColor = .white
         blueSliderLabel.value = 0.5
         blueSliderLabel.tintColor = UIColor.blue
-        blueValue.text = ""
-     
+        blueValue.text = "\(blueSliderLabel.value)"
     }
 
     @IBAction func redSliderAction() {
-        let roundValue = round((1000 * redSliderLabel.value) / 1000)
+        let roundValue = round(1000 * redSliderLabel.value) / 1000
         redValue.text = "\(roundValue)"
-        viewLabel.backgroundColor = UIColor(displayP3Red: CGFloat(roundValue), green: CGFloat(greenSliderLabel.value), blue: CGFloat(blueSliderLabel.value), alpha: 1)
-        
+        viewLabel.backgroundColor = UIColor(displayP3Red: CGFloat(redSliderLabel.value), green: CGFloat(greenSliderLabel.value), blue: CGFloat(blueSliderLabel.value), alpha: 1)
     }
     @IBAction func greenLabelAction() {
-        greenValue.text = "\(greenSliderLabel.value)"
+        let roundValue = round(1000 * greenSliderLabel.value) / 1000
+        greenValue.text = "\(roundValue)"
         viewLabel.backgroundColor = UIColor(displayP3Red: CGFloat(redSliderLabel.value), green: CGFloat(greenSliderLabel.value), blue: CGFloat(blueSliderLabel.value), alpha: 1)
     }
     @IBAction func blueLabelAction() {
-        blueValue.text = "\(blueSliderLabel.value)"
+        let roundValue = round(1000 * blueSliderLabel.value) / 1000
+        blueValue.text = "\(roundValue)"
         viewLabel.backgroundColor = UIColor(displayP3Red: CGFloat(redSliderLabel.value), green: CGFloat(greenSliderLabel.value), blue: CGFloat(blueSliderLabel.value), alpha: 1)
     }
     
